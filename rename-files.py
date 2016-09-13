@@ -34,8 +34,9 @@ def rename_extension(file_path, extension, new_extension):
 			for file in files:
 				try:
 					# Rename each file
+					length = len(extension) * -1
 					old_name = file_path + file
-					new_name = file_path + file[:-3:] + new_extension
+					new_name = file_path + file[:length:] + new_extension
 					rename(old_name, new_name)
 					print 'Updated ' + new_name
 				except:
